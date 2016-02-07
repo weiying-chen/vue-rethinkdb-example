@@ -1,0 +1,60 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
+@import '../node_modules/font-awesome/css/font-awesome.css';
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Signika:400,300);
+
+body {
+  color: #444;
+  background: #eee;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+a {
+  color: #2980b9;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Signika', sans-serif;
+}
+
+p {
+  color: #999;  
+}
+
+input[type="text"], textarea {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.page-header {
+  margin-top: 0;
+  border-color: #ddd;
+  color: #aaa;
+}
+
+.btn {
+  font-family: 'Signika', sans-serif;
+}
+
+.panel {
+  border-width: 0;
+}
+
+.panel .panel-body > h2 {
+  margin-top: 0;
+}
+
+.input-group-addon {
+  color: #5e6d81;
+  background-color: #fff;
+  border-color: #eee;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-right-width: 0;
+  border-radius: 0;
+  padding-right: 0;
+}
