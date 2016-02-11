@@ -1,5 +1,6 @@
 <template>
-  <div class="col-md-4">
+  <div class="col-md-9">
+    <h4 class="page-header">Projects</h4>
     <div class="panel panel-default">
       <div class="panel-body">
         <h3>{{ post.title }}</h3>

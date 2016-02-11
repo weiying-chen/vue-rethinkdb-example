@@ -10,7 +10,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['', '.js', '.vue'],
+    extensions: ['', '.js', '.vue', 'styl'],
     alias: {
       'src': path.resolve(__dirname, '../src')
     }
@@ -40,6 +40,9 @@ module.exports = {
           limit: 10000,
           name: '[name].[ext]?[hash:7]'
         }
+      },
+      {
+        test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader'
       },
 
       { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery' },

@@ -8,9 +8,9 @@
         </div>
         <div class="navbar-collapse collapse" id="searchbar">
           <form class="navbar-form">
-            <div class="form-group" style="display:inline;">
-              <div class="input-group" style="display:table;">
-                <span class="input-group-addon" style="width:1%;"><i class="fa fa-search"></i></span>
+            <div class="form-group" style="display:inline">
+              <div class="input-group" style="display:table">
+                <span class="input-group-addon" style="width:1%"><i class="fa fa-search"></i></span>
                 <input class="form-control" name="search" placeholder="Search Here" autocomplete="off" autofocus="autofocus" type="text">
               </div>
             </div>
@@ -28,30 +28,30 @@
   </div>
 </template>
 
-<style>
-@import "variables.css";
+<style lang="stylus">
+@import "variables.styl"
 
 .navbar {
-  position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
+  position: relative
+  min-height: 50px
+  margin-bottom: 20px
+  border: 1px solid transparent
 }
 
 .navbar-default {
-  background-color: #fff;
-  border-width: 0;
+  background-color: #fff
+  border-width: 0
 }
 
 .navbar-form {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0
+  margin-bottom: 0
 }
 
 .navbar-form .input-group > .form-control {
-  background-color: #fff;
-  border-width: 0;
-  min-height: 50px;
-  border-radius: 0;
+  background-color: #fff
+  border-width: 0
+  min-height: 50px
+  border-radius: 0
 }
 </style>

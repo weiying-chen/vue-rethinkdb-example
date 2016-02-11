@@ -2,3 +2,10 @@
 node_modules/
 dist/static/
 npm-debug.log
+_replicator/
+_users/
+config.json
+log.txt
+pouch__all_dbs__/
+pouch__auth_sessions__/
+vuedb/
