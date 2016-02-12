@@ -3,18 +3,18 @@
     <div class="col-md-12">
       <div class="panel panel-default">
         <div class="panel-body">
-          <h2>{{ post.title }}</h2>
-          <p>{{ post.content }}</p>
+          <h2>{{ project.title }}</h2>
+          <p>{{ project.content }}</p>
         </div>
       </div>
     </div>
     <div class="col-md-12">
-      <h3 class="page-header">Comments ({{ comments.length }})</h3>
+      <h3 class="page-header">Feeds ({{ feeds.length }})</h3>
     </div>
-    <comment
-      v-for="comment in comments"
-      :comment="comment">
-    </comment>
+    <feed
+      v-for="feed in feeds"
+      :feed="feed">
+    </feed>
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
@@ -27,32 +27,32 @@
 </template>
 
 <script>
-import Comment from '../components/Comment'
+import Feed from '../components/Feed'
 import store from '../store'
 
 export default {
   components: {
-    Comment
+    Feed
   },
 
   data () {
     return {
       _id: '',
-      post: '',
-      comments: [],
+      project: '',
+      feeds: [],
       content: '',
       type: '',
       createdAt: '',
-      postId: ''
+      projectId: ''
     }
   },
 
   route: {
     data ({ to }) {
-      return store.findPostById(to.params.id).then(post =>
-        store.findCommentsByPostId(post._id).then(comments => ({
-          post: post,
-          comments: comments
+      return store.findProjectById(to.params.id).then(project =>
+        store.findFeedsByProjectId(project._id).then(feeds => ({
+          project: project,
+          feeds: feeds
         }))
       )
     }
@@ -62,12 +62,12 @@ export default {
     submit () {
       const data = {
         content: this.content,
-        type: 'comment',
+        type: 'feed',
         createdAt: new Date().toJSON(),
-        postId: this.post._id
+        projectId: this.project._id
       }
       store.create(data).then(() => {
-        store.reloadComments(this, 'comments', this.post._id)
+        store.reloadFeeds(this, 'feeds', this.project._id)
       })
       this.content = ''
     }

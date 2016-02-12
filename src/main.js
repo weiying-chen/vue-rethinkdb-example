@@ -1,25 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import App from './App'
-import PostNew from './components/PostNew'
-import PostList from './components/PostList'
-import PostView from './components/PostView'
+import ProjectNew from './components/ProjectNew'
+import ProjectList from './components/ProjectList'
+import ProjectView from './components/ProjectView'
 
 Vue.use(Router)
 
 const router = new Router()
 
 router.map({
-  '/posts/new': {
-    component: PostNew
+  '/projects/new': {
+    component: ProjectNew
   },
 
-  '/posts': {
-    component: PostList
+  '/projects': {
+    component: ProjectList
   },
 
-  '/post/:id': {
-    component: PostView
+  '/project/:id': {
+    component: ProjectView
   }
 })
 
@@ -28,7 +28,7 @@ router.beforeEach(function () {
 })
 
 router.redirect({
-  '*': '/posts'
+  '*': '/projects'
 })
 
 router.start(App, '#app')

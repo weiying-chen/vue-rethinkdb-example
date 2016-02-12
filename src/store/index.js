@@ -15,44 +15,44 @@ store.find = () => {
   return db.allDocs({include_docs: true})
 }
 
-store.findPosts = () => {
+store.findProjects = () => {
   function map (doc, emit) {
-    if (doc.type === 'post') {
+    if (doc.type === 'project') {
       emit(doc.createdAt)
     }
   }
-  return db.query(map, {include_docs: true}).then(posts =>
-    _.map(posts.rows, (post) => post.doc)
+  return db.query(map, {include_docs: true}).then(projects =>
+    _.map(projects.rows, (project) => project.doc)
   )
 }
 
-store.findPostById = (id) => {
+store.findProjectById = (id) => {
   return db.get(id)
 }
 
-store.findCommentsByPostId = (postId) => {
+store.findFeedsByProjectId = (projectId) => {
   function map (doc, emit) {
-    if (doc.postId === postId) {
+    if (doc.projectId === projectId) {
       emit(doc.createdAt)
     }
   }
-  return db.query(map, {include_docs: true}).then(comments =>
-    _.map(comments.rows, (comment) => comment.doc)
+  return db.query(map, {include_docs: true}).then(feeds =>
+    _.map(feeds.rows, (feed) => feed.doc)
   )
 }
 
-store.reloadPosts = (obj, prop) => {
-  store.findPosts().then(posts => {
-    obj[prop] = _.map(posts, (post) => post)
+store.reloadProjects = (obj, prop) => {
+  store.findProjects().then(projects => {
+    obj[prop] = _.map(projects, (project) => project)
   })
   if (remotedb) {
     db.sync(remotedb)
   }
 }
 
-store.reloadComments = (obj, prop, postId) => {
-  store.findCommentsByPostId(postId).then(comments => {
-    obj[prop] = _.map(comments, (comment) => comment)
+store.reloadFeeds = (obj, prop, projectId) => {
+  store.findFeedsByProjectId(projectId).then(feeds => {
+    obj[prop] = _.map(feeds, (feed) => feed)
   })
   if (remotedb) {
     db.sync(remotedb)

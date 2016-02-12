@@ -2,7 +2,7 @@
   <div class="col-md-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <p style="margin-bottom:2px;">{{ comment.content }}</p>
+        <p style="margin-bottom:2px;">{{ feed.content }}</p>
         <br>
         <br>
       </div>
@@ -12,10 +12,10 @@
 
 <script>
 export default {
-  name: 'Comment',
+  name: 'Feed',
 
   props: {
-    comment: Object
+    feed: Object
   }
 }
 </script>

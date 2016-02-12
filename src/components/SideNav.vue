@@ -2,8 +2,8 @@
   <div class="col-md-3">
     <h4 class="page-header">User name</h4>
     <ul class="nav nav-pills nav-stacked">
-      <li v-for="post in posts">
-        <a :href="'#/post/' + post._id">{{ post.title }}</a>
+      <li v-for="project in projects">
+        <a :href="'#/project/' + project._id">{{ project.title }}</a>
       </li>
     </ul>
   </div>
@@ -18,12 +18,12 @@ export default {
       id: '',
       title: '',
       content: '',
-      posts: []
+      projects: []
     }
   },
 
   created () {
-    store.reloadPosts(this, 'posts')
+    store.reloadProjects(this, 'projects')
   }
 }
 </script>

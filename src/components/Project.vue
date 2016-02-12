@@ -3,9 +3,9 @@
     <h4 class="page-header">Projects</h4>
     <div class="panel panel-default">
       <div class="panel-body">
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.content }}</p>
-        <a class="btn btn-default" :href="'#/post/' + post._id">View</a>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.content }}</p>
+        <a class="btn btn-default" :href="'#/project/' + project._id">View</a>
       </div>
     </div>
   </div>
@@ -13,10 +13,10 @@
 
 <script>
 export default {
-  name: 'Post',
+  name: 'Project',
 
   props: {
-    post: Object
+    project: Object
   }
 }
 </script>

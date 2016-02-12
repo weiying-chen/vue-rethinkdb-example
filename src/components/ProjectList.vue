@@ -5,8 +5,8 @@
       <h4 class="page-header">Projects</h4>
       <div class="panel panel-default">
         <div class="panel-body">
-          <h3>Post title</h3>
-          <p>Post content</p>
+          <h3>Project title</h3>
+          <p>Project content</p>
           <a class="btn btn-default">View</a>
         </div>
       </div>
@@ -30,24 +30,24 @@ export default {
       content: '',
       createdAt: '',
       type: '',
-      posts: []
+      projects: []
     }
   },
 
   created () {
-    store.reloadPosts(this, 'posts')
+    store.reloadProjects(this, 'projects')
   },
 
   methods: {
     submit () {
       const data = {
-        'type': 'post',
+        'type': 'project',
         'title': this.title,
         'content': this.content,
         'createdAt': new Date().toJSON()
       }
       store.create(data).then(results => {
-        store.reloadPosts(this, 'posts')
+        store.reloadProjects(this, 'projects')
       })
       this.title = ''
       this.content = ''

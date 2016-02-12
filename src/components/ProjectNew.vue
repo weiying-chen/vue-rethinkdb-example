@@ -27,7 +27,7 @@ export default {
   methods: {
     submit () {
       const data = {
-        'type': 'post',
+        'type': 'project',
         'title': this.title,
         'content': this.content,
         'createdAt': new Date().toJSON()
