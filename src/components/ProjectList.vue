@@ -55,13 +55,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus">
-.panel {
-  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0)
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0)
-  h3 {
-    margin-top: 0
-  }
-}
-</style>

@@ -30,12 +30,12 @@
   position: relative
   min-height: 50px
   margin-bottom: 20px
-  border: 1px solid transparent
+  /*border: 1px solid transparent*/
 }
 
 .navbar-default {
   background-color: #fff
-  border-width: 0
+  /*border-width: 0*/
 }
 
 .navbar-form {

@@ -1,19 +1,28 @@
 <template>
-<div class="col-md-12">
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <input type="text" class="form-control" v-model="title" placeholder="Enter title">
-      <input type="text" class="form-control" v-model="content" placeholder="Enter content">
-      <button class="btn btn-default" v-on:click="submit">Submit</button>
+<div class="row">
+  <side-nav></side-nav>
+  <div class="col-md-9">
+    <h4 class="page-header">New project</h4>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <input type="text" class="form-control" v-model="title" placeholder="Enter title">
+        <input type="text" class="form-control" v-model="content" placeholder="Enter content">
+        <button class="btn btn-default" v-on:click="submit">Submit</button>
+      </div>
     </div>
   </div>
 </div>
 </template>
 
 <script>
+import SideNav from './SideNav'
 import store from '../store'
 
 export default {
+  components: {
+    SideNav
+  },
+
   data () {
     return {
       id: '',
