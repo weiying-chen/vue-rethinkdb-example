@@ -1,29 +1,29 @@
 <template>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h2>{{ project.title }}</h2>
-          <p>{{ project.content }}</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-12">
-      <h3 class="page-header">Feeds ({{ feeds.length }})</h3>
-    </div>
-    <feed
-      v-for="feed in feeds"
-      :feed="feed">
-    </feed>
-    <div class="col-md-4">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <input type="text" class="form-control" v-model="content" placeholder="Enter content">
-          <button class="btn btn-default" v-on:click="submit">Submit</button>
-        </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.content }}</p>
       </div>
     </div>
   </div>
+  <div class="col-md-12">
+    <h3 class="page-header">Feeds ({{ feeds.length }})</h3>
+  </div>
+  <feed
+    v-for="feed in feeds"
+    :feed="feed">
+  </feed>
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <input type="text" class="form-control" v-model="content" placeholder="Enter content">
+        <button class="btn btn-default" v-on:click="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>

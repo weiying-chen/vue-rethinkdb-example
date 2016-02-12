@@ -1,12 +1,12 @@
 <template>
-  <div class="col-md-3">
-    <h4 class="page-header">User name</h4>
-    <ul class="nav nav-pills nav-stacked">
-      <li v-for="project in projects">
-        <a :href="'#/project/' + project._id">{{ project.title }}</a>
-      </li>
-    </ul>
-  </div>
+<div class="col-md-3">
+  <h4 class="page-header">User name</h4>
+  <ul class="nav nav-pills nav-stacked">
+    <li v-for="project in projects">
+      <a :href="'#/project/' + project._id">{{ project.title }}</a>
+    </li>
+  </ul>
+</div>
 </template>
 
 <script>
