@@ -3,55 +3,36 @@
   <side-nav></side-nav>
   <div class="col-md-9">
     <h4 class="page-header">Projects</h4>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <h3>Project title</h3>
-        <p>Project content</p>
-        <a class="btn btn-default">View</a>
-      </div>
-    </div>
+    <feed
+      v-for="feed in feeds"
+      :feed="feed">
+    </feed>
   </div>
 </div>
 </template>
 
 <script>
 import SideNav from '../components/SideNav'
+import Feed from '../components/Feed'
 import store from '../store'
 
 export default {
   components: {
-    SideNav
+    SideNav,
+    Feed
   },
 
   data () {
     return {
-      id: '',
       title: '',
       content: '',
-      createdAt: '',
-      type: '',
-      projects: []
+      projects: [],
+      feeds: []
     }
   },
 
   created () {
-    store.reloadProjects(this, 'projects')
-  },
-
-  methods: {
-    submit () {
-      const data = {
-        'type': 'project',
-        'title': this.title,
-        'content': this.content,
-        'createdAt': new Date().toJSON()
-      }
-      store.create(data).then(results => {
-        store.reloadProjects(this, 'projects')
-      })
-      this.title = ''
-      this.content = ''
-    }
+    store.reloadFeeds(this, 'feeds')
   }
 }
 </script>

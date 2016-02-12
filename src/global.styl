@@ -24,10 +24,6 @@ h4 {
   font-family: 'Signika', sans-serif
 }
 
-p {
-  color: #999
-}
-
 input[type="text"], textarea {
   outline: none
   box-shadow: none !important
@@ -37,7 +33,7 @@ input[type="text"], textarea {
 
 .page-header {
   margin-top: 0
-  border-color: #ddd
+  border-color: $border-color
   color: #aaa
 }
 
@@ -46,9 +42,9 @@ input[type="text"], textarea {
 }
 
 .panel {
-  border-width: 0
-  // -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0)
-  // box-shadow: 0 0 0 rgba(0, 0, 0, 0)
+  border-color: $border-color
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0)
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0)
   h3 {
     margin-top: 0
   }
@@ -58,9 +54,8 @@ input[type="text"], textarea {
 }
 
 .input-group-addon {
-  color: #5e6d81
   background-color: #fff
-  border-color: #eee
+  border-color: $border-color
   border-top-width: 0
   border-bottom-width: 0
   border-right-width: 0

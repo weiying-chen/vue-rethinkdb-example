@@ -11,9 +11,9 @@ store.create = data => {
   return db.post(data)
 }
 
-store.find = () => {
-  return db.allDocs({include_docs: true})
-}
+// store.find = () => {
+//   return db.allDocs({include_docs: true})
+// }
 
 store.findProjects = () => {
   function map (doc, emit) {
@@ -23,6 +23,17 @@ store.findProjects = () => {
   }
   return db.query(map, {include_docs: true}).then(projects =>
     _.map(projects.rows, (project) => project.doc)
+  )
+}
+
+store.findFeeds = () => {
+  function map (doc, emit) {
+    if (doc.type === 'feed') {
+      emit(doc.createdAt)
+    }
+  }
+  return db.query(map, {include_docs: true}).then(feeds =>
+    _.map(feeds.rows, (feed) => feed.doc)
   )
 }
 
@@ -50,7 +61,16 @@ store.reloadProjects = (obj, prop) => {
   }
 }
 
-store.reloadFeeds = (obj, prop, projectId) => {
+store.reloadFeeds = (obj, prop) => {
+  store.findFeeds().then(feeds => {
+    obj[prop] = _.map(feeds, (feed) => feed)
+  })
+  if (remotedb) {
+    db.sync(remotedb)
+  }
+}
+
+store.reloadFeedsByProjectId = (obj, prop, projectId) => {
   store.findFeedsByProjectId(projectId).then(feeds => {
     obj[prop] = _.map(feeds, (feed) => feed)
   })

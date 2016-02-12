@@ -66,7 +66,7 @@ export default {
         projectId: this.project._id
       }
       store.create(data).then(() => {
-        store.reloadFeeds(this, 'feeds', this.project._id)
+        store.reloadFeedsByProjectId(this, 'feeds', this.project._id)
       })
       this.content = ''
     }

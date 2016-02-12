@@ -21,5 +21,5 @@ export default {
 </script>
 
 <style lang="stylus">
-@import "./global.styl"
+@import "./global"
 </style>

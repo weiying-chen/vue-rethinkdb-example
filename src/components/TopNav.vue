@@ -25,12 +25,13 @@
 </template>
 
 <style lang="stylus">
+@import "../variables"
 
 .navbar {
   position: relative
   min-height: 50px
   margin-bottom: 20px
-  /*border: 1px solid transparent*/
+  border-color: $border-color
 }
 
 .navbar-default {
