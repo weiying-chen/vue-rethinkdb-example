@@ -4,18 +4,16 @@
   "author": "Alexandro Chen <alexandrochen.com@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nodemon build/dev-server.js",
+    "dev": "nodemon server.js",
     "build": "rimraf dist && webpack --progress --hide-modules --config build/webpack.prod.conf.js",
     "test": "karma start build/karma.conf.js --single-run"
   },
   "dependencies": {
     "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",
-    "express-pouchdb": "^1.0.2",
     "font-awesome": "^4.5.0",
     "less": "^2.6.0",
     "lodash": "^4.2.1",
-    "pouchdb": "^5.2.1",
     "rethinkdb": "^2.2.1",
     "rethinkdbdash": "^2.2.18",
     "stylus": "^0.53.0",

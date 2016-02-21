@@ -2,7 +2,7 @@ const express = require('express')
 const r = require('rethinkdbdash')()
 const bodyParser = require('body-parser')
 const webpack = require('webpack')
-const config = require('./webpack.dev.conf')
+const config = require('./build/webpack.dev.conf')
 const _ = require('lodash')
 
 const app = express()
@@ -27,7 +27,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.use(require('webpack-hot-middleware')(compiler))
 
 router.get('/projects', (req, res) => {
-  r.table("projects").run().then(result => {
+  r.table("projects").orderBy('createdAt').run().then(result => {
     res.send(result)
   }).catch(err => {
     console.log("Error:", err)
@@ -56,7 +56,7 @@ router.get('/projects/:id', (req, res) => {
 })
 
 router.get('/projects/:id/feeds', (req, res) => {
-  r.table('feeds').filter({projectId: req.params.id}).run().then(result => {
+  r.table('feeds').filter({projectId: req.params.id}).orderBy('createdAt').run().then(result => {
     res.send(result)
   }).catch(err => {
     console.log('Error:', err)
@@ -64,7 +64,7 @@ router.get('/projects/:id/feeds', (req, res) => {
 })
 
 router.get('/feeds', (req, res) => {
-  r.table("feeds").run().then(result => {
+  r.table("feeds").orderBy('createdAt').run().then(result => {
     res.send(result)
   }).catch(err => {
     console.log("Error:", err)
