@@ -1,6 +1,6 @@
-# vue-pouch
+# vue-rethinkdb
 
-Vue.js + PouchDB
+Vue.js + Express + RethinkDB
 
 ## Build Setup
 
@@ -8,13 +8,13 @@ Vue.js + PouchDB
 # install dependencies
 npm install
 
-# install PouchDB Server
+# install RethinkDB
 
-npm install -g pouchdb-server
+http://rethinkdb.com/docs/install/
 
-# serve PouchDB at localhost:5984
-pouchdb-server --port 5984
+# serve RethinkDB at localhost:8080 (default)
+rethinkdb
 
-# serve app with hot reload at localhost:8080
+# serve app with hot reload at localhost:8090
 npm run dev
 ```
