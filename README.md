@@ -1,6 +1,6 @@
 # vue-rethinkdb
 
-Vue.js + PouchDB
+Vue.js + Express + RethinkDB
 
 ## Build Setup
 
