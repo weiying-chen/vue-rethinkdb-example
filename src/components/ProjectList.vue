@@ -14,9 +14,10 @@
 <script>
 import SideNav from '../components/SideNav'
 import Feed from '../components/Feed'
-import store from '../store'
 
 export default {
+  name: 'ProjectList',
+
   components: {
     SideNav,
     Feed
@@ -32,7 +33,9 @@ export default {
   },
 
   created () {
-    store.reloadFeeds(this, 'feeds')
+    this.$http.get('http://localhost:8090/api/feeds').then(response => {
+      this.feeds = response.data
+    })
   }
 }
 </script>

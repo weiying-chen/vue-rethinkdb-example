@@ -26,9 +26,10 @@
 <script>
 import SideNav from '../components/SideNav'
 import Feed from '../components/Feed'
-import store from '../store'
 
 export default {
+  name: 'ProjectView',
+
   components: {
     SideNav,
     Feed
@@ -36,22 +37,19 @@ export default {
 
   data () {
     return {
-      _id: '',
-      project: '',
+      project: {},
       feeds: [],
       content: '',
-      type: '',
-      createdAt: '',
       projectId: ''
     }
   },
 
   route: {
     data ({ to }) {
-      return store.findProjectById(to.params.id).then(project =>
-        store.findFeedsByProjectId(project._id).then(feeds => ({
-          project: project,
-          feeds: feeds
+      return this.$http.get(`http://localhost:8090/api/projects/${to.params.id}`).then(project =>
+        this.$http.get(`http://localhost:8090/api/projects/${to.params.id}/feeds`).then(feeds => ({
+          project: project.data,
+          feeds: feeds.data
         }))
       )
     }
@@ -59,14 +57,13 @@ export default {
 
   methods: {
     submit () {
-      const data = {
+      this.$http.post('http://localhost:8090/api/feeds', {
         content: this.content,
-        type: 'feed',
-        createdAt: new Date().toJSON(),
-        projectId: this.project._id
-      }
-      store.create(data).then(() => {
-        store.reloadFeedsByProjectId(this, 'feeds', this.project._id)
+        projectId: this.project.id
+      }).then(response => {
+        this.$http.get(`http://localhost:8090/api/projects/${this.project.id}/feeds`).then(response => {
+          this.feeds = response.data
+        })
       })
       this.content = ''
     }

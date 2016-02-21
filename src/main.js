@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Resource from 'vue-resource'
 import App from './App'
 import ProjectNew from './components/ProjectNew'
 import ProjectList from './components/ProjectList'
 import ProjectView from './components/ProjectView'
 
 Vue.use(Router)
+Vue.use(Resource)
 
 const router = new Router()
 

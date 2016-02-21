@@ -16,33 +16,30 @@
 
 <script>
 import SideNav from './SideNav'
-import store from '../store'
 
 export default {
+  name: 'ProjectNew',
+
   components: {
     SideNav
   },
 
   data () {
     return {
-      id: '',
       title: '',
-      content: '',
-      createdAt: '',
-      type: ''
+      content: ''
     }
   },
 
   methods: {
     submit () {
-      const data = {
-        'type': 'project',
-        'title': this.title,
-        'content': this.content,
-        'createdAt': new Date().toJSON()
-      }
-      store.create(data).then(results => {
-        console.log('Success')
+      this.$http.post('http://localhost:8090/api/projects', {
+        title: this.title,
+        content: this.content
+      }).then(response => {
+        this.$http.get('http://localhost:8090/api/projects').then(response => {
+          this.projects = response.data
+        })
       })
       this.title = ''
       this.content = ''

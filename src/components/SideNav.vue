@@ -3,27 +3,24 @@
   <h4 class="page-header">User name</h4>
   <ul class="nav nav-pills nav-stacked">
     <li v-for="project in projects">
-      <a :href="'#/project/' + project._id">{{ project.title }}</a>
+      <a :href="'#/project/' + project.id">{{ project.title }}</a>
     </li>
   </ul>
 </div>
 </template>
 
 <script>
-import store from '../store'
-
 export default {
   data () {
     return {
-      id: '',
-      title: '',
-      content: '',
       projects: []
     }
   },
 
   created () {
-    store.reloadProjects(this, 'projects')
+    this.$http.get('http://localhost:8090/api/projects').then(response => {
+      this.projects = response.data
+    })
   }
 }
 </script>

@@ -1,11 +1,6 @@
 .DS_Store
 node_modules/
-dist/static/
+dist/
 npm-debug.log
-_replicator/
-_users/
-config.json
-log.txt
-pouch__all_dbs__/
-pouch__auth_sessions__/
+rethinkdb_data/
 vuedb/
