@@ -1,6 +1,6 @@
 {
-  "name": "vue-express",
-  "description": "A Vue.js project",
+  "name": "vue-rethinkdb-example",
+  "description": "Vue + Express + RethinkDB",
   "author": "Alexandro Chen <alexandrochen.com@gmail.com>",
   "private": true,
   "scripts": {
