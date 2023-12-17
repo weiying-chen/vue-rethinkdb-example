@@ -1,6 +1,6 @@
 # Vue RethinkDB Example
 
-Vue.js + Express + RethinkDB
+Vue + Express + RethinkDB
 
 ## Installation
 
