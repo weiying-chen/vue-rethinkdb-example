@@ -8,7 +8,7 @@ Vue.js + Express + RethinkDB
 # Install dependencies
 npm install
 
-# install RethinkDB
+# Install RethinkDB
 
 http://rethinkdb.com/docs/install/
 ```
