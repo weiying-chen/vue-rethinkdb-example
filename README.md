@@ -1,4 +1,4 @@
-# Vue.js RethinkDB Example
+# Vue RethinkDB Example
 
 Vue.js + Express + RethinkDB
 
