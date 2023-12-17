@@ -1,20 +1,24 @@
-# vue-rethinkdb
+# Vue.js RethinkDB Example
 
 Vue.js + Express + RethinkDB
 
-## Build Setup
+## Installation
 
 ``` bash
-# install dependencies
+# Install dependencies
 npm install
 
 # install RethinkDB
 
 http://rethinkdb.com/docs/install/
+```
 
-# serve RethinkDB at localhost:8080 (default)
+## Usage
+
+```bash
+# Serve RethinkDB at localhost:8080
 rethinkdb
 
-# serve app with hot reload at localhost:8090
+# Serve app with hot reload at localhost:8090
 npm run dev
 ```
