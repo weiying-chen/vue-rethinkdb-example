@@ -1,7 +1,7 @@
 {
   "name": "vue-rethinkdb-example",
   "description": "Vue + Express + RethinkDB",
-  "author": "Wei-Ying Chen <alexandrochen.com@gmail.com>",
+  "author": "Wei-ying Chen <alexandrochen.com@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nodemon server.js",
